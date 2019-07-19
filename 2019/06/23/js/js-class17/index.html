@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Mrlin Blogs">
 <meta property="og:description" content="Day17 - Sort Without Articles 作者：©Mrlin(史密斯林)简介：学习记录，用于记录在CSDN课程中的学习内容。课程：30天完成30个JS原生开发项目挑战视频教程。JavaScript30 是 Wes Bos 推出的一个 30 天挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。目的是帮助人们用纯 JavaScript 来写">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-18T07:30:30.557Z">
+<meta property="og:updated_time" content="2019-07-19T01:15:15.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js-Sort Without Articles">
 <meta name="twitter:description" content="Day17 - Sort Without Articles 作者：©Mrlin(史密斯林)简介：学习记录，用于记录在CSDN课程中的学习内容。课程：30天完成30个JS原生开发项目挑战视频教程。JavaScript30 是 Wes Bos 推出的一个 30 天挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。目的是帮助人们用纯 JavaScript 来写">
@@ -175,7 +175,7 @@
 <p>作者：©Mrlin(史密斯林)<br>简介：学习记录，用于记录在CSDN课程中的学习内容。<br>课程：<a href="https://edu.csdn.net/course/detail/5776" target="_blank" rel="noopener">30天完成30个JS原生开发项目挑战视频教程</a>。<a href="https://javascript30.com" target="_blank" rel="noopener">JavaScript30</a> 是 <a href="https://github.com/wesbos" target="_blank" rel="noopener">Wes Bos</a> 推出的一个 30 天挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。目的是帮助人们用纯 JavaScript 来写东西，不借助框架和库，也不使用编译器和引用。</p>
 </blockquote>
 <h2 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h2><p>今天的挑战是对数组进行排序。将乐队按照乐曲名称进行排序，曲名前面的<code>a/an/the</code>的单词不参与排序。</p>
-<iframe src="/assets/demo/js_learn/class17/index.html" width="780" height="400" scrolling="auto"></iframe>
+<iframe src="/assets/demo/js_learn/class17/index.html" width="100%" height="400" scrolling="auto"></iframe>
 
 <a id="more"></a>
 <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> bandsele = <span class="built_in">document</span>.querySelector(<span class="string">'#bands'</span>);</span><br><span class="line">  <span class="comment">// 取消每一个字符串的开头的a|an|the</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">strip</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/^(a |an |the )/ig</span>, <span class="string">''</span>).trim();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> bands = [<span class="string">'The Plot in You'</span>, <span class="string">'The Devil Wears Prada'</span>, <span class="string">'Pierce the Veil'</span>, <span class="string">'Norma Jean'</span>, <span class="string">'The Bled'</span>,</span><br><span class="line">    <span class="string">'Say Anything'</span>, <span class="string">'The Midway State'</span>, <span class="string">'We Came as Romans'</span>, <span class="string">'Counterparts'</span>, <span class="string">'Oh, Sleeper'</span>, <span class="string">'A Skylit Drive'</span>,</span><br><span class="line">    <span class="string">'Anywhere But Here'</span>, <span class="string">'An Old Dog'</span></span><br><span class="line">  ];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取到已经排过序的数组</span></span><br><span class="line">  <span class="keyword">const</span> sortedBands = bands.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> strip(a) &gt; strip(b) ? <span class="number">1</span> : <span class="number">-1</span>);</span><br><span class="line">  bandsele.innerHTML =</span><br><span class="line">    sortedBands</span><br><span class="line">    .map(<span class="function"><span class="params">band</span> =&gt;</span> <span class="string">`&lt;li&gt;<span class="subst">$&#123;band&#125;</span>&lt;/li&gt;`</span>)</span><br><span class="line">    .join(<span class="string">''</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
@@ -387,11 +387,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color1">openLayers</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">openLayers</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
             <div class="clearfix"></div>
