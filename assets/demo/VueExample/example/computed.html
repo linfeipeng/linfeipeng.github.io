@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello world</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <test></test>
+    </div>
+    <script type="text/javascript">
+        var newList = [{
+            title:'牛逼立体1',
+            data:'2018/11/5'
+        },{
+            title:'牛逼立体2',
+            data:'2018/11/4'
+        },{
+            title:'牛逼立体3',
+            data:'2018/11/3'
+        },{
+            title:'牛逼立体4',
+            data:'2018/11/2'
+        }];
+        var test = {
+            template:`
+            <div>
+                <br>\{\{newMessage\}\}<br>\{\{newprice\}\}<br>\{\{price\}\}
+                <hr>
+                <button @click="changePrice">改变价格</button>
+                <ul>
+                    <li v-for="item in showList">\{\{item.title\}\}--\{\{item.data\}\}</li>
+                </ul>
+            </div>`,
+            data:function(){
+                return{
+                    price:100,
+                    newList:newList,
+                    message:'Hello'
+                }
+            },
+            computed:{
+                newMessage: function(){
+                    return this.message.split('').reverse().join('');
+                },
+                newprice:function(){
+                    var newprice = "￥"+this.price+"元";
+                    return newprice;
+                },
+                showList:function(){
+                    var showList = this.newList.reverse();
+                    return showList;
+                }
+            },
+            methods:{
+                changePrice(){
+                    this.price++;
+                }
+            }
+        }
+        
+        var app = new Vue({
+            el:'#app',
+            components:{
+                test:test
+            }
+        });
+    </script>
+</body>
+</html>

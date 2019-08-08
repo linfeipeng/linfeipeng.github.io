@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <parent></parent>
+    </div>
+
+    <script type="text/javascript">
+        //定义一个子组件
+        var children = {
+            template: `
+           <div>
+                <h5>我是子组件</h5>
+                <button @click="childrenAdd">Add(子)</button>
+                <div>子组件值：\{\{cnum\}\}</div>
+           </div>`,
+            props: {
+                num: Number
+            },
+            watch: {
+                num(newVal, oldVal) {
+                    console.info('value changed 2', newVal)
+                    this.cnum = newVal
+                }
+            },
+            data: function () {
+                return {
+                    cnum: this.num
+                }
+            },
+            methods: {
+                childrenAdd() {
+                    this.$emit("add",++this.cnum);
+                }
+            }
+
+        }
+        var parent = {
+            template: `
+           <div>
+                <h5>我是父组件</h5>
+                <button @click="changeNum">父组件方法</button>
+                <button @click="changeNum2">父组件方法2</button>
+                <div>父组件值：\{\{num\}\}</div>
+                <children @add="parentAdd" v-bind:num="num"></children>
+           </div>
+           `,
+            components: {
+                children: children
+            },
+            watch:{
+                num(n,o){
+                    this.num = n;
+                }
+            },
+            data: function () {
+                return {
+                    num: 0
+                }
+            },
+            methods: {
+                changeNum(){
+                    this.num = 12;
+                    console.log(this.num);
+                },
+                changeNum2(){
+                    this.num = 13;
+                    console.log(this.num);
+                },
+                parentAdd(num) {
+                    this.num = num;
+                }
+            }
+        }
+
+        var app = new Vue({
+            el: "#app",
+            components: {
+                parent: parent
+            }
+        })
+    </script>
+</body>
+
+</html>

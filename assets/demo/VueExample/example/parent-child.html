@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>parent children</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <parent></parent>
+    </div>
+
+    <script type="text/javascript">
+        //定义一个子组件
+        var children = {
+            template: `
+           <div>
+                <h5>我是子组件</h5>
+                <button @click="childrenAdd">Add(子)</button>
+                <div>子组件值：\{\{cnum\}\}</div>
+           </div>`,
+            props: {
+                num: Number
+            },
+            data:function(){
+                return{
+                    cnum:this.num
+                }
+            },
+            methods:{
+                childrenAdd(){
+                    this.cnum++;
+                }
+            }
+        }
+        var parent = {
+            template: `
+           <div>
+                <h5>我是父组件</h5>
+                <button @click="changeNum">父组件方法</button>
+                <div>父组件值：\{\{num\}\}</div>
+                <children v-bind:num="num"></children>
+           </div>
+           `,
+            components: {
+                children: children
+            },
+            data: function () {
+                return {
+                    num: 10
+                }
+            },
+            methods: {
+                changeNum(){
+                    this.num = 12;
+                    console.log(this.num);
+                }
+            }
+        }
+
+        var app = new Vue({
+            el: "#app",
+            components: {
+                parent: parent
+            }
+        })
+    </script>
+</body>
+
+</html>
