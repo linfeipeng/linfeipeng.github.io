@@ -144,6 +144,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-viewtest/view" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/05/viewtest/view/">面试整理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/05/viewtest/view/" class="archive-article-date">
+  	<time datetime="2019-10-05T04:15:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="笔试面试整理"><a href="#笔试面试整理" class="headerlink" title="笔试面试整理"></a>笔试面试整理</h1><blockquote>
+<p>作者：©Mrlin(史密斯林)<br>简介：学习记录，笔试面试过程中遇到的问题及整理汇总。</p>
+</blockquote>
+<h1 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h1><blockquote>
+<p>1、编程：①数字转格式，前面加上，三位拆分添加一个”,”,小数点后保留两位，不需要考虑四舍五入，例如1234578.7889，输出，三位拆分添加一个”,”,小数点后保留两位，不需要考虑四舍五入，例如1234578.7889，输出1,234,578.78<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">transferNum</span> (<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr = num.toString().split(<span class="string">'.'</span>);</span><br><span class="line">    <span class="comment">// var result = arr[0].toString().replace(/(?=(\d&#123;3&#125;)+$)/g,',');</span></span><br><span class="line">    <span class="keyword">var</span> dept = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">var</span> num = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> result = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">while</span>(num.length &gt; dept)&#123;</span><br><span class="line">        result = <span class="string">','</span>+num.slice(-dept)+result;</span><br><span class="line">        num = num.slice(<span class="number">0</span>,num.length - dept); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(num) &#123;</span><br><span class="line">        result = num + result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(transferNum(<span class="number">12345678.956</span>))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/10/05/viewtest/view/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/05/viewtest/view/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js/js-class30" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -855,85 +936,6 @@
 
 
   
-    <article id="post-js/js-class21" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/28/js/js-class21/">js-Geolocation 中文指南</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/28/js/js-class21/" class="archive-article-date">
-  	<time datetime="2019-06-28T04:15:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Day21-Geolocation-中文指南"><a href="#Day21-Geolocation-中文指南" class="headerlink" title="Day21 - Geolocation 中文指南"></a>Day21 - Geolocation 中文指南</h1><blockquote>
-<p>作者：©Mrlin(史密斯林)<br>简介：学习记录，用于记录在CSDN课程中的学习内容。<br>课程：<a href="https://edu.csdn.net/course/detail/5776" target="_blank" rel="noopener">30天完成30个JS原生开发项目挑战视频教程</a>。<a href="https://javascript30.com" target="_blank" rel="noopener">JavaScript30</a> 是 <a href="https://github.com/wesbos" target="_blank" rel="noopener">Wes Bos</a> 推出的一个 30 天挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。目的是帮助人们用纯 JavaScript 来写东西，不借助框架和库，也不使用编译器和引用。</p>
-</blockquote>
-<p>第21天的目的是练习<code>NavigatorGeolocation.geolocation</code>这一webAPI的使用，通过使用此API可以访问到设备的位置信息。这允许网站或应用根据用户的位置提供个性化结果。</p>
-        
-          <a class="article-more-a" href="/2019/06/28/js/js-class21/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/28/js/js-class21/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1027,11 +1029,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">openLayers</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vuejs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">openLayers</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
             
             <div class="clearfix"></div>
